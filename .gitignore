@@ -1,0 +1,18 @@
+# Python & Numba caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.nbc
+*.nbi
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local agent/tooling state
+.refact/
+
+# OS temp files
+.DS_Store
+Thumbs.db

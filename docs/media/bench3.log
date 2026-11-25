@@ -1,0 +1,12 @@
+game   1:  7-10  MCTS      [Greedy 0 | MCTS 1 | draws 0]
+game   2: 13-4   Greedy    [Greedy 1 | MCTS 1 | draws 0]
+game   3: 10-7   Greedy    [Greedy 2 | MCTS 1 | draws 0]
+game   4:  6-11  MCTS      [Greedy 2 | MCTS 2 | draws 0]
+game   5:  8-9   MCTS      [Greedy 2 | MCTS 3 | draws 0]
+game   6:  5-11  MCTS      [Greedy 2 | MCTS 4 | draws 0]
+game   7:  8-9   MCTS      [Greedy 2 | MCTS 5 | draws 0]
+game   8:  6-10  MCTS      [Greedy 2 | MCTS 6 | draws 0]
+game   9:  1-16  MCTS      [Greedy 2 | MCTS 7 | draws 0]
+game  10: 12-5   Greedy    [Greedy 3 | MCTS 7 | draws 0]
+
+Greedy: 3 wins (30%)   MCTS: 7 wins (70%)   draws: 0   (70 s)  -> docs/media/bench_greedy_mcts.csv

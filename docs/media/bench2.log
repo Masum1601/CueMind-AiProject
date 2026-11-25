@@ -1,0 +1,12 @@
+game   1:  5-12  Minimax   [Greedy 0 | Minimax 1 | draws 0]
+game   2:  7-10  Minimax   [Greedy 0 | Minimax 2 | draws 0]
+game   3:  2-14  Minimax   [Greedy 0 | Minimax 3 | draws 0]
+game   4:  3-13  Minimax   [Greedy 0 | Minimax 4 | draws 0]
+game   5:  7-10  Minimax   [Greedy 0 | Minimax 5 | draws 0]
+game   6:  3-14  Minimax   [Greedy 0 | Minimax 6 | draws 0]
+game   7:  6-10  Minimax   [Greedy 0 | Minimax 7 | draws 0]
+game   8:  5-12  Minimax   [Greedy 0 | Minimax 8 | draws 0]
+game   9:  9-8   Greedy    [Greedy 1 | Minimax 8 | draws 0]
+game  10:  4-13  Minimax   [Greedy 1 | Minimax 9 | draws 0]
+
+Greedy: 1 wins (10%)   Minimax: 9 wins (90%)   draws: 0   (83 s)  -> docs/media/bench_greedy_minimax.csv

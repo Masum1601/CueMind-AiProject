@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CueMind: Final Project Report</title>
+<style>
+  @page { size: A4; margin: 14mm 15mm 14mm 15mm; }
+  :root { --ink:#111111; --muted:#555555; --line:#CCCCCC; --cyan:#0E8FAD; --amber:#C77700; --tint:#F6F6F6; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", Arial, sans-serif; font-size: 9.9pt; line-height: 1.42; color: var(--ink); margin: 0; }
+  h1, h2, h3 { font-family: "Segoe UI", Arial, sans-serif; font-weight: 700; color: var(--ink); margin: 0; }
+  h2 { font-size: 16pt; margin: 12px 0 7px; break-after: avoid; }
+  h3 { break-after: avoid; }
+  .brk { page-break-before: always; }
+  h2 .n { margin-right: 8px; }
+  h3 { font-size: 12pt; margin: 14px 0 5px; color: #111111; }
+  p { margin: 0 0 7px; text-align: justify; }
+  .page { page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+  figure { margin: 8px 0 10px; text-align: center; break-inside: avoid; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 4px; }
+  figure img.plain { border: none; }
+  figcaption { font-size: 8.6pt; color: var(--muted); margin-top: 3px; }
+  table { border-collapse: collapse; width: 100%; font-size: 8.9pt; margin: 6px 0 10px; break-inside: avoid; }
+  th { background: #EEEEEE; color: #111111; text-align: left; font-weight: 600; }
+  th, td { border: 1px solid var(--line); padding: 3px 6px; }
+  td.num, th.num { text-align: right; }
+  pre { font-family: Consolas, "Courier New", monospace; font-size: 8.6pt; line-height: 1.3; background: var(--tint);
+        border: 1px solid var(--line); border-radius: 4px; padding: 7px 9px; margin: 5px 0 9px; white-space: pre-wrap; break-inside: avoid; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .two figure { margin: 4px 0 6px; }
+  .note { background: var(--tint); border: 1px solid var(--line); border-radius: 4px; padding: 7px 10px; margin: 6px 0 10px; font-size: 9.4pt; }
+  .eq { font-family: "Cambria Math", Cambria, serif; font-size: 11pt; text-align: center; margin: 6px 0 8px; }
+  ul { margin: 2px 0 8px 18px; padding: 0; }
+  li { margin-bottom: 2px; }
+  .cover { height: 263mm; display: flex; flex-direction: column; }
+  .cover .banner { height: 120mm; border-radius: 6px; background: #0A1020 url("file:///F:/E/Downloads/Need2livewebsite/cuemind/docs/media/gem_cover.jpg") center/cover;
+                   position: relative; }
+  .cover .banner .t { position: absolute; left: 14mm; bottom: 14mm; color: #EAF2FA; }
+  .cover .banner .t .k { font-size: 10pt; letter-spacing: 3px; color: #DDDDDD; font-weight: 600; }
+  .cover .banner .t .h { font-family: Bahnschrift, sans-serif; font-size: 40pt; font-weight: 700; line-height: 1.05; margin-top: 6px; }
+  .cover .banner .t .s { font-family: Bahnschrift, sans-serif; font-size: 17pt; color: #EEEEEE; margin-top: 4px; }
+  .cover .meta { margin-top: 16mm; font-size: 11.5pt; line-height: 1.7; }
+  .cover .meta b { font-weight: 600; }
+  .cover .foot { margin-top: auto; font-size: 10.5pt; color: var(--muted); border-top: 1px solid var(--line); padding-top: 6mm; }
+  .toc { columns: 2; column-gap: 12mm; font-size: 10pt; }
+  .toc div { display: flex; justify-content: space-between; border-bottom: 1px dotted var(--line); padding: 2px 0; break-inside: avoid; }
+  .flow { break-inside: avoid; display: flex; gap: 6px; align-items: stretch; margin: 6px 0 10px; }
+  .flow div { flex: 1; border: 1px solid var(--line); border-radius: 5px; padding: 6px 7px; background: var(--tint); font-size: 8.6pt; }
+  .flow div b { display: block; font-family: "Segoe UI", Arial, sans-serif; font-weight: 700; color: #111111; font-size: 10pt; }
+  .flow .hot { border-color: #888888; }
+  .algo { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="page cover">
+  <div class="banner"><div class="t">
+    <div class="k">FINAL PROJECT REPORT · CSE 3210 ARTIFICIAL INTELLIGENCE LAB</div>
+    <div class="h">CueMind</div>
+    <div class="s">60-Second Rack Attack Duel: Minimax vs Monte Carlo Tree Search</div>
+  </div></div>
+  <div class="meta">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10mm">
+      <div>
+        <div><b>Submitted by</b></div>
+        <div>Azmaeen Nur Sajin</div>
+        <div style="color:#555">Roll 2207113</div>
+        <div style="margin-top:2mm">Masumur Rahman Fokrul</div>
+        <div style="color:#555">Roll 2207114</div>
+        <div style="color:#555">Department of CSE, KUET</div>
+      </div>
+      <div>
+        <div><b>Submitted to</b></div>
+        <div>Waliul Islam Sumon</div>
+        <div style="color:#555">Lecturer, Department of CSE, KUET</div>
+        <div style="margin-top:2mm">Mst. Sadia Islam</div>
+        <div style="color:#555">Lecturer, Department of CSE, KUET</div>
+      </div>
+    </div>
+    <div style="margin-top:8mm"><b>Course</b>&nbsp; CSE 3210: Artificial Intelligence Laboratory</div>
+    <div><b>Department</b>&nbsp; Computer Science and Engineering</div>
+    <div><b>Institution</b>&nbsp; Khulna University of Engineering &amp; Technology (KUET)</div>
+  </div>
+  <div class="foot">An 8-ball pool game in which two AI agents compete on one shared table, with every search algorithm from the course used inside the game.</div>
+</section>
+
+<!-- ============ ABSTRACT + TOC ============ -->
+<section class="page">
+  <h2>Abstract</h2>
+  <p>CueMind is a two-player pool game built for the Artificial Intelligence laboratory. Instead of standard 8-ball rules it uses a <b>Rack Attack</b> format: both players share one table, each owns a 60-second chess clock that runs only while that player thinks and aims, every potted ball is worth one point and the 8-ball three. The two main players are a <b>Minimax</b> agent (alpha-beta pruning, chance nodes for shot noise and iterative deepening) and a <b>Monte Carlo Tree Search</b> agent (UCB1). The remaining course algorithms do the supporting work: <b>A*</b> plans the run-out order, <b>Greedy best-first</b> is the easy AI and orders moves, <b>BFS</b> places the cue ball after a foul, <b>depth-limited DFS</b> finds bank shots, <b>IDDFS</b> finds kick shots and controls thinking time, and <b>bidirectional search</b> finds combination shots.</p>
+  <p>The game is written in Python with Pygame. A numba-compiled fixed-step physics engine is shared by the renderer and by the agents, so the shots an agent simulates behave exactly like the shots on screen apart from random execution error. The game offers AI vs AI, Human vs AI and a benchmark mode. This report describes the rules and mechanics, explains each algorithm with pseudocode, traces one decision through every algorithm step by step, and reports the results of 40 benchmark matches, in which both search agents beat the greedy baseline and MCTS edged Minimax 11–9.</p>
+
+  <h2 style="margin-top:14px">Contents</h2>
+  <div class="toc">
+    <div><span>1. Introduction and objectives</span><span>3</span></div>
+    <div><span>2. Game overview and rules</span><span>3</span></div>
+    <div><span>3. Game mechanics and physics</span><span>3</span></div>
+    <div><span>4. System design</span><span>5</span></div>
+    <div><span>5. Algorithms and pseudocode</span><span>6</span></div>
+    <div><span>6. Step-by-step decision analysis</span><span>9</span></div>
+    <div><span>7. Results and evaluation</span><span>13</span></div>
+    <div><span>8. Conclusion and future work</span><span>14</span></div>
+  </div>
+
+  <h3>Implementation summary</h3>
+  <table>
+    <tr><th>Item</th><th>Detail</th></tr>
+    <tr><td>Language and libraries</td><td>Python 3.13, Pygame 2.6, NumPy, numba (JIT-compiled physics and geometry kernels)</td></tr>
+    <tr><td>Source size</td><td>23 Python modules: physics, shot finder, planner, rules, three agents, renderer, six scenes</td></tr>
+    <tr><td>Modes</td><td>AI vs AI, Human vs AI (Easy = Greedy, Medium = Minimax, Hard = MCTS), Benchmark</td></tr>
+    <tr><td>Graphics</td><td>Per-pixel lit 3D balls that roll with the true motion, procedural walnut table, animated cue, particles, AI Vision panel</td></tr>
+    <tr><td>Visual assets</td><td>Menu, setup and results backgrounds and robot avatars generated with Google Gemini; everything else drawn in code</td></tr>
+    <tr><td>Run</td><td><code>python main.py</code> (game) · <code>python benchmark.py --a Minimax --b MCTS --games 20</code></td></tr>
+  </table>
+</section>
+
+<!-- ============ 1-2 ============ -->
+<section class="brk">
+  <h2><span class="n">1</span>Introduction and objectives</h2>
+  <p>Board games such as tic-tac-toe are the usual setting for adversarial search, but their moves are discrete and their outcomes are certain. Pool is harder: a shot is a continuous choice of angle and power, the result depends on physics, and even a perfect plan can miss. The project brief required a game in which at least two AI agents play against each other. We chose pool to show how classic search algorithms can be adapted to a continuous, stochastic game.</p>
+  <ul>
+    <li>Build a complete, playable pool game with an AI vs AI mode and a Human vs AI mode.</li>
+    <li>Implement Minimax and MCTS as competing players and compare them fairly.</li>
+    <li>Give every other algorithm from the course (A*, Greedy, BFS, DFS/DLS, IDDFS, bidirectional search) a real job in the game.</li>
+    <li>Make the decision process visible during play and traceable for analysis.</li>
+  </ul>
+
+  <h2 style="margin-top:12px"><span class="n">2</span>Game overview and rules</h2>
+  <p>CueMind uses the <b>Rack Attack Duel</b> format. Two players share one table and alternate turns. Because the table is shared, every shot changes the position the opponent faces, so the agents genuinely play against each other rather than racing on separate tables.</p>
+  <table>
+    <tr><th style="width:24%">Rule</th><th>Detail</th></tr>
+    <tr><td>Clock</td><td>Each player has 60 s. The clock runs only while that player thinks and aims; it is paused while balls roll.</td></tr>
+    <tr><td>Scoring</td><td>Any object ball = 1 point; the 8-ball = 3 points. There are no solids/stripes groups.</td></tr>
+    <tr><td>Turn</td><td>Pot at least one ball without a foul and you shoot again; otherwise the turn passes.</td></tr>
+    <tr><td>Foul</td><td>Cue ball pocketed (scratch) or cue ball touches no ball: −1 point, −5 s, and the opponent gets ball-in-hand.</td></tr>
+    <tr><td>End</td><td>The table is clear or both clocks reach zero. Higher score wins; a tie goes to the player with more clock left.</td></tr>
+    <tr><td>Break</td><td>15 balls in a triangle, the 8-ball in the centre; the cue ball starts on the head spot.</td></tr>
+  </table>
+  <div class="two">
+    <figure><img src="file:///F:/E/Downloads/Need2livewebsite/cuemind/docs/media/02_setup_ai.png"><figcaption>Figure 2. Player setup: choose the two agents, ball speed, AI vision lines and who breaks.</figcaption></figure>
+    <figure><img src="file:///F:/E/Downloads/Need2livewebsite/cuemind/docs/media/06b_think_late.png"><figcaption>Figure 3. Match screen while Minimax thinks: candidate shots on the table and the AI Vision panel.</figcaption></figure>
+  </div>
+  <p>The match screen shows two player cards (avatar, score, clock ring and potted balls), a rack tracker and two-sided time bar in the centre, the table, and the AI Vision panel on the right. While an agent thinks, the panel shows its live search statistics, its top five shots and the A* run-out plan; faint lines on the table show the shots being weighed.</p>
+</section>
+
+<!-- ============ 3 Mechanics ============ -->
+<section>
+  <h2><span class="n">3</span>Game mechanics and physics</h2>
+  <p>The table field is 1000 × 500 units with ball radius r = 11.5, six pockets (capture radius 26 for corners, 23 for side pockets) and cushions modelled as line segments, including the angled pocket jaws. One fixed-step engine is used both to animate the game and inside the agents' searches, so a simulated shot reproduces the real shot exactly when the same angle and power are used.</p>
+  <h3>Physics step (dt = 1/240 s)</h3>
+  <pre># one tiny time step (dt = 1/240 second)
+for ball in moving_balls:
+    ball.position = ball.position + ball.speed * dt      # move a little
+    ball.speed = ball.speed - friction * dt            # friction slows it down
+
+for a, b in pairs_of_balls:
+    if distance(a, b) &lt; 2 * radius:                     # two balls touch
+        swap_speed_along_line(a, b)                     # equal balls trade speed
+
+for ball in balls:
+    if ball touches a cushion:   bounce it back (keeps 78% of its speed)
+    if ball is near a pocket:    ball.potted = True</pre>
+  <p>The kernels are compiled with numba, so one full shot from strike to rest takes about 3 ms. This lets an agent test several hundred shots per second while it thinks. Agents always simulate on copies of the table and never touch the live game state.</p>
+
+  <h3>Execution noise</h3>
+  <p>Every AI shot is played with random error: angle error with σ = 0.30° and power error with σ = 2.5%. Both agents get the same noise, which makes pool a stochastic game and is the reason both agents average over several noisy samples of a shot.</p>
+
+  <h3>Aiming with the ghost ball</h3>
+  <p class="eq">Ghost = B − 2r · (P − B) / |P − B|</p>
+  <p>To send target ball B towards pocket P, the cue ball must arrive at the ghost point, one ball diameter behind B on the line from P through B. The aim angle is the direction from the cue ball to the ghost. A shot is rejected if another ball blocks either the cue path or the object-ball path, if the cut angle exceeds 80°, or if it approaches a side pocket too flatly.</p>
+
+  <h3>Heuristic: chance that a pot works</h3>
+  <p class="eq">σ = d₁·σ<sub>θ</sub> / (2r·cos cut) &nbsp;&nbsp; α = atan(w / d₂) &nbsp;&nbsp; p = erf(α / (σ√2)) · (1 − ¼(cut/85°)⁴) &nbsp;&nbsp; h = p × points</p>
+  <p>An aiming error of σ<sub>θ</sub> moves the contact point sideways by d₁·σ<sub>θ</sub>, which turns the object ball by about σ. The pot works while that turn stays inside the pocket's angular window α. Here d₁ is the cue-to-ghost distance, d₂ the ball-to-pocket distance and w the usable pocket half-width (62% of the capture radius, narrower for side pockets hit at an angle). The required power is computed from the friction model so the object ball still rolls at about 100 units/s at the pocket; each pot is offered at 1.0×, 1.3× and 1.75× of that power (soft, medium, firm).</p>
+  <div class="two">
+    <figure><img src="file:///F:/E/Downloads/Need2livewebsite/cuemind/docs/media/11b_human_power.png"><figcaption>Figure 4. Human aiming: ghost ball, object-ball path, cut angle and power bar.</figcaption></figure>
+    <figure><img src="file:///F:/E/Downloads/Need2livewebsite/cuemind/docs/media/08_roll.png"><figcaption>Figure 5. Balls rolling after a shot; numbers and stripes rotate with the motion.</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ 4 System design ============ -->
+<section>
+  <h2><span class="n">4</span>System design</h2>
+  <div class="flow">
+    <div><b>1 · Physics</b>numba fixed-step engine; balls, cushions, pockets</div>
+    <div><b>2 · Shot finder</b>direct, bank (DLS), kick (IDDFS), combo (bidirectional), safety</div>
+    <div class="hot"><b>3 · Agent</b>Greedy, Minimax or MCTS chooses a shot within its time budget</div>
+    <div><b>4 · Rules</b>points, fouls, clocks, turn order, ball-in-hand (BFS)</div>
+    <div><b>5 · Renderer</b>3D balls, cue, effects, sound, AI Vision panel</div>
+  </div>
+  <p>Each turn flows through these five parts. The agent runs in a background thread and searches on a snapshot of the match; meanwhile the main thread keeps animating at 60 fps and drains the player's clock in real time. The thinking budget per shot is 14% of the time left, between 0.25 s and 2.5 s, so agents speed up as their clock runs down. When the agent returns, the cue animates to the chosen angle, the shot is played with execution noise, and the rules module scores the result.</p>
+  <table>
+    <tr><th style="width:26%">Module</th><th>Responsibility</th></tr>
+    <tr><td><code>game/physics.py</code></td><td>Table state, fixed-step simulation, events for sound and effects</td></tr>
+    <tr><td><code>game/shots.py</code></td><td>Ghost ball, pot chance, direct/bank/kick/combo/safety shots, BFS placement</td></tr>
+    <tr><td><code>game/planner.py</code></td><td>A* run-out planner</td></tr>
+    <tr><td><code>game/rules.py</code></td><td>Rack Attack scoring, fouls, clocks, snapshots for search</td></tr>
+    <tr><td><code>game/agents/</code></td><td>Greedy, Minimax and MCTS agents; shared evaluation and noisy play</td></tr>
+    <tr><td><code>game/render/</code>, <code>game/scenes/</code></td><td>Ball shader, table art, cue, particles, synthesized sound, UI; menu, setup, match, results, benchmark, how-to</td></tr>
+  </table>
+  <h3>Evaluation function (used by Minimax leaves and MCTS rewards)</h3>
+  <p class="eq">E(s) = (score<sub>me</sub> − score<sub>opp</sub>) ± 0.9 · Q(s) + 0.025 · (clock<sub>me</sub> − clock<sub>opp</sub>)</p>
+  <p>Q(s) is the best heuristic pot value available to whoever moves next; it is added when it is our turn and subtracted when it is the opponent's. Finished matches score the point difference plus ±4 for a win or loss. Values are clamped to [−20, 20], which the chance-node pruning needs. MCTS turns E into a reward in [0, 1] with 1 / (1 + e<sup>−E/2</sup>).</p>
+  <div class="two">
+    <figure><img src="file:///F:/E/Downloads/Need2livewebsite/cuemind/docs/media/07_ai_aim.png"><figcaption>Figure 6. MCTS aiming a combination shot; the top shots list shows visit counts.</figcaption></figure>
+    <figure><img src="file:///F:/E/Downloads/Need2livewebsite/cuemind/docs/media/12_ball_in_hand.png"><figcaption>Figure 7. Ball-in-hand after a foul: a green ring marks a legal spot.</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ 5 Algorithms ============ -->
+<section>
+  <h2><span class="n">5</span>Algorithms and pseudocode</h2>
+  <table>
+    <tr><th style="width:22%">Algorithm</th><th style="width:30%">Role in CueMind</th><th>Modification for pool</th></tr>
+    <tr><td>Minimax + α-β</td><td>AI player 1</td><td>Chance nodes for shot noise with Star1 pruning; turn follows real pool order (MAX can follow MAX)</td></tr>
+    <tr><td>IDDFS</td><td>Minimax time control; kick shots</td><td>Deepens until the clock budget ends; kicks try 0, 1, 2, 3 cushions</td></tr>
+    <tr><td>MCTS (UCB1)</td><td>AI player 2</td><td>Open-loop tree, re-simulated with fresh noise; rank-based actions below the root; progressive widening</td></tr>
+    <tr><td>A*</td><td>Run-out order planner</td><td>Cost = −ln p + time; plans the 5 nearest balls; first step boosts move ordering</td></tr>
+    <tr><td>Greedy best-first</td><td>Easy AI; move ordering</td><td>Ranks shots by h = p × points</td></tr>
+    <tr><td>BFS</td><td>Ball-in-hand placement</td><td>Grid search outward from the ideal spot to the nearest legal spot</td></tr>
+    <tr><td>DFS / DLS</td><td>Bank shots</td><td>One tree level per cushion, depth limit 2, restitution-scaled mirror images</td></tr>
+    <tr><td>Bidirectional</td><td>Combination shots</td><td>Forward from the cue ball, backward from each pocket, meet in the middle</td></tr>
+  </table>
+
+  <h3>5.1 Minimax with alpha-beta and chance nodes</h3>
+  <p>Minimax imagines the game as a tree. On <b>MAX</b> levels it is our turn and we pick the shot with the highest value; on <b>MIN</b> levels it is the opponent's turn and we assume they pick the shot that is worst for us. In pool a player who pots shoots again, so two MAX levels can follow each other. Because a real shot can miss, every shot is played a few times with a small random error and the results are averaged. <b>Alpha-beta</b> remembers the best value found so far (α for us, β for the opponent) and stops looking at a branch as soon as it is clear that branch cannot be better. <b>Iterative deepening</b> searches 1 shot ahead, then 2, then 3, so there is always an answer when the clock runs out.</p>
+<pre>def minimax(state, depth, my_turn, alpha, beta):
+    if depth == 0 or game_over(state):
+        return evaluate(state)                  # score of this table
+
+    if my_turn:                                 # MAX: I want the highest value
+        best = -infinity
+        for shot in good_shots(state):
+            value = average_of_2_tries(state, shot, depth)   # shots can miss
+            best = max(best, value)
+            alpha = max(alpha, best)
+            if alpha &gt;= beta:
+                break                           # alpha-beta: skip the rest
+        return best
+    else:                                       # MIN: opponent wants the lowest
+        best = +infinity
+        for shot in good_shots(state):
+            value = average_of_2_tries(state, shot, depth)
+            best = min(best, value)
+            beta = min(beta, best)
+            if alpha &gt;= beta:
+                break
+        return best
+
+# iterative deepening: try depth 1, then 2, then 3 ... until time is up
+for depth in [1, 2, 3, 4]:
+    if time_is_up(): break
+    best_shot = the shot with the best minimax value at this depth</pre>
+
+  <h3>5.2 Monte Carlo Tree Search (UCB1)</h3>
+  <p class="eq">UCB1(child) = W/N + C·√(ln N<sub>parent</sub> / N), &nbsp; C = 1.4</p>
+<pre>for i in range(many_times):                         # until the time is up
+    node = root
+    # 1. Selection: go down the tree using UCB1
+    while node is fully expanded:
+        node = child with the highest  Q + C * sqrt(ln(N_parent) / N)
+    # 2. Expansion: add one new shot we have not tried
+    node = node.add_new_child()
+    # 3. Simulation: play the shot (with a little random error) and one more quick shot
+    reward = play_out_and_score(node)            # number between 0 and 1
+    # 4. Backpropagation: tell every node on the path how it went
+    while node is not None:
+        node.N = node.N + 1
+        node.W = node.W + reward
+        node = node.parent
+
+best_shot = root child with the most visits</pre>
+  <p>Below the root an action means "the k-th best shot in the position reached" (k = 1..4), because the actual shots depend on where the balls stop after each noisy simulation.</p>
+</section>
+
+<section>
+  <h3 style="margin-top:0">5.3 A* run-out planner</h3>
+  <p>A state is the cue-ball position plus the set of balls still to pot. Potting ball b in pocket q costs −ln p + 0.15, combining difficulty with a fixed time cost per shot; the cue ball is assumed to stop near the ghost point. Every remaining ball needs at least one shot costing at least 0.15, so h = (balls left) × 0.15 never overestimates: it is admissible and A* returns the cheapest order it finds. To stay fast it plans the five balls nearest the cue ball with at most 2500 expansions.</p>
+<pre>open_list = [ (f=0, cue_position, balls_left, plan=[]) ]
+while open_list:
+    node = take the node with the smallest f      # f = g + h
+    if no balls left in node:
+        return node.plan                          # cheapest order found
+    for ball in node.balls_left:
+        cost = -log(pot_chance(ball)) + 0.15      # hard shot = high cost
+        g = node.g + cost                         # cost so far
+        h = (number of balls left - 1) * 0.15     # guess of cost still to pay
+        add (g + h, new cue position, balls_left - ball, plan + [ball]) to open_list</pre>
+
+  <h3>5.4 Greedy best-first (Easy AI)</h3>
+<pre>best_score = -1
+for shot in direct_pots:
+    score = pot_chance(shot) * points(shot)     # h = p x points
+    if score &gt; best_score:
+        best_score = score
+        best_shot = shot
+play(best_shot)                                 # no thinking about the future</pre>
+
+  <h3>5.5 BFS: ball-in-hand placement</h3>
+<pre>queue = [ideal_spot]
+visited = {ideal_spot}
+while queue:
+    spot = queue.pop(0)                         # first in, first out
+    if spot is inside the table and touches no ball:
+        return spot                             # nearest free spot
+    for next_spot in the 8 neighbours of spot:
+        if next_spot not in visited:
+            visited.add(next_spot)
+            queue.append(next_spot)</pre>
+  <p>Because each grid step costs the same, the first legal cell found is the one nearest to the ideal spot. The agents run BFS from the four best ideal spots and keep the placement with the best next pot.</p>
+
+  <h3>5.6 DFS / depth-limited search: bank shots</h3>
+<pre>def find_bank(path_of_cushions, limit):
+    if len(path_of_cushions) == limit:
+        if the ball can travel this cushion path into the pocket:
+            save this bank shot
+        return
+    for cushion in ["top", "bottom", "left", "right"]:
+        find_bank(path_of_cushions + [cushion], limit)      # go one level deeper
+
+find_bank([], limit=1)       # banks off 1 cushion
+find_bank([], limit=2)       # banks off 2 cushions</pre>
+  <p>The mirror image is scaled by the cushion restitution (y' = c − (y − c)/e) so the predicted rebound angle matches the engine. Bank shots use limits 1 and 2.</p>
+
+  <h3>5.7 IDDFS: kick shots</h3>
+<pre>for limit in [0, 1, 2, 3]:              # 0 cushions = straight line
+    shots = find_kick(cue_ball, limit)  # depth-limited search (as above)
+    if shots:
+        return shots                    # stop at the fewest cushions</pre>
+  <p>Kicks are generated only when no pot or safety exists (the cue ball is snookered), so the simplest legal escape is found first. The same deepen-until-time-runs-out idea is used by Minimax (Section 5.1).</p>
+
+  <h3>5.8 Bidirectional search: combination shots</h3>
+<pre># search 1 (forward): balls the cue ball can hit directly
+forward = [ball for ball in balls if line_is_clear(cue_ball, ball)]
+
+# search 2 (backward): balls that can drop into a pocket
+backward = [ball for ball in balls if line_is_clear(ball, pocket)]
+
+# where the two searches meet = a combination shot
+for A in forward:
+    for B in backward:
+        if A != B and line_is_clear(A, B):
+            save combo shot: cue ball -&gt; A -&gt; B -&gt; pocket</pre>
+  <p>Searching from both ends only pairs balls that are already reachable from the cue and already pottable, instead of trying every cue → A → B → pocket chain.</p>
+</section>
+
+<!-- ============ 6 Decision analysis ============ -->
+<section class="brk">
+  <h2><span class="n">6</span>Step-by-step decision analysis</h2>
+  <p>To show how decisions are made, one fixed position was traced through every algorithm with logging enabled. The rack (seed 11) was broken with a fixed shot; no ball dropped and Minimax is to move with all 15 balls on the table, both scores 0 and both clocks at 60 s. For readable trees the trace uses smaller widths than the live game: Minimax root width 4, inner width 3, two samples per root shot and one inside; MCTS uses 160 iterations over the top 8 shots.</p>
+  <figure><img src="file:///F:/E/Downloads/Need2livewebsite/cuemind/docs/media/scenario.png" style="width:86%"><figcaption>Figure 8. The traced position. A–D: the four best pots by heuristic (coloured paths); white numbers: the A* run-out order.</figcaption></figure>
+
+  <h3>Step 1: candidate shots and their heuristic</h3>
+  <p>The shot finder produced 16 direct pots, 11 bank shots (DLS), 1 combination (bidirectional) and 22 safeties. Table 1 shows the four best direct pots.</p>
+  <table>
+    <tr><th>Shot</th><th>Ball → pocket</th><th class="num">d₁</th><th class="num">d₂</th><th class="num">cut</th><th class="num">σ</th><th class="num">α</th><th class="num">p</th><th class="num">h</th></tr>
+    <tr><td>A</td><td>2 → bottom side</td><td class="num">50.5</td><td class="num">145.6</td><td class="num">33.9°</td><td class="num">0.79°</td><td class="num">4.91°</td><td class="num">0.994</td><td class="num">0.994</td></tr>
+    <tr><td>B</td><td>9 → bottom-right</td><td class="num">125.4</td><td class="num">256.8</td><td class="num">19.0°</td><td class="num">1.73°</td><td class="num">3.59°</td><td class="num">0.962</td><td class="num">0.962</td></tr>
+    <tr><td>C</td><td>2 → bottom-left</td><td class="num">50.9</td><td class="num">585.2</td><td class="num">35.9°</td><td class="num">0.82°</td><td class="num">1.58°</td><td class="num">0.938</td><td class="num">0.938</td></tr>
+    <tr><td>D</td><td>10 → top-right</td><td class="num">136.2</td><td class="num">333.5</td><td class="num">5.9°</td><td class="num">1.79°</td><td class="num">2.77°</td><td class="num">0.879</td><td class="num">0.879</td></tr>
+  </table>
+  <div class="note"><b>Worked example, shot A.</b> σ = 50.5 × 0.30° / (2 × 11.5 × cos 33.9°) = 15.15 / 19.09 = 0.79°. α = atan(w / 145.6) = 4.91°. p = erf(4.91 / (0.79 × √2)) × (1 − ¼(33.9/85)⁴) = 1.000 × 0.994 = 0.994, so h = 0.994 × 1 point. Shot C pots the same ball but its long d₂ shrinks the pocket window α to 1.58°, and shot D is almost straight but its long d₁ makes σ large. <b>Greedy</b> stops here and plays shot A.</div>
+</section>
+
+<section>
+  <h3 style="margin-top:0">Step 2: A* run-out plan</h3>
+  <p>A* considered the five balls nearest the cue ball (2, 4, 7, 8, 9) and returned the order <b>2 → bottom side, 4 → bottom-right, 9 → bottom-right, 7 → top side, 8 → top-right</b>, with total cost 2.28 after 24 expansions. Table 2 lists the first six nodes taken from the open list; f never decreases along the chosen path, as expected with an admissible heuristic.</p>
+  <table>
+    <tr><th>Step</th><th>Path so far</th><th class="num">g</th><th class="num">h</th><th class="num">f = g + h</th><th class="num">Children</th></tr>
+    <tr><td>1</td><td>start</td><td class="num">0.000</td><td class="num">0.75</td><td class="num">0.750</td><td class="num">3</td></tr>
+    <tr><td>2</td><td>2 → bottom side</td><td class="num">0.156</td><td class="num">0.60</td><td class="num">0.756</td><td class="num">2</td></tr>
+    <tr><td>3</td><td>9 → bottom-right</td><td class="num">0.202</td><td class="num">0.60</td><td class="num">0.802</td><td class="num">6</td></tr>
+    <tr><td>4</td><td>2 → bottom-left</td><td class="num">0.221</td><td class="num">0.60</td><td class="num">0.821</td><td class="num">2</td></tr>
+    <tr><td>5</td><td>2 → bottom side, 9 → bottom-right</td><td class="num">0.401</td><td class="num">0.45</td><td class="num">0.851</td><td class="num">3</td></tr>
+    <tr><td>6</td><td>9 → bottom-right, 4 → bottom-left</td><td class="num">0.782</td><td class="num">0.45</td><td class="num">1.232</td><td class="num">5</td></tr>
+  </table>
+  <p>For example, step 2 expands "pot 2 into the bottom side": g = −ln 0.994 + 0.15 = 0.156 and four balls remain, so h = 4 × 0.15 = 0.60. The first planned pot receives a small ordering bonus in Minimax and MCTS, which encourages them to try position-friendly shots first.</p>
+
+  <h3>Step 3: Minimax with iterative deepening</h3>
+  <figure><img class="plain" src="file:///F:/E/Downloads/Need2livewebsite/cuemind/docs/media/fig_minimax_overview_light.png" style="width:96%"><figcaption>Figure 9. Root of the Minimax tree. Values at depth 1 and depth 2 for the four root shots.</figcaption></figure>
+  <table>
+    <tr><th>Root shot</th><th class="num">Depth 1 value</th><th class="num">Depth 2 value</th></tr>
+    <tr><td>2 → bottom side, soft</td><td class="num"><b>+1.632</b></td><td class="num">+1.528</td></tr>
+    <tr><td>2 → bottom side, medium</td><td class="num">+1.548</td><td class="num"><b>+2.789</b></td></tr>
+    <tr><td>2 → bottom side, firm</td><td class="num">+1.514</td><td class="num">+2.674</td></tr>
+    <tr><td>9 → bottom-right, soft</td><td class="num">+0.500</td><td class="num">−0.500</td></tr>
+  </table>
+  <p><b>Depth 1</b> (8 simulations, 21 nodes) evaluates the position right after each shot and prefers the soft pot (+1.63). <b>Depth 2</b> (30 simulations, 87 nodes, 2 branches pruned) also searches the next shot. After the medium-power pot the cue ball stops where ball 15 can be potted into the top-right pocket, so medium now scores +2.79 and Minimax changes its decision. If time ran out during depth 3, it would still play this depth-2 choice. This is the advantage of iterative deepening.</p>
+</section>
+
+<section>
+  <h3 style="margin-top:0">Inside the winning branch</h3>
+  <figure><img class="plain" src="file:///F:/E/Downloads/Need2livewebsite/cuemind/docs/media/fig_minimax_branch_light.png" style="width:94%"><figcaption>Figure 10. Expanded chance node for "2 → bottom side, medium" at depth 2.</figcaption></figure>
+  <p>Both noisy samples potted ball 2 (score 1–0), so Minimax shoots again and the child is a MAX node. Each MAX node tries three follow-ups on ball 15. In sample 1 the firm follow-up is best (+2.90); in sample 2 the soft one is (+2.68). The chance node averages them: (2.90 + 2.68) / 2 = +2.79.</p>
+  <div class="note"><b>Alpha-beta cut in this trace.</b> When "9 → bottom-right, soft" was searched, α was already +2.79. The shot missed, so the opponent moved (MIN node). The opponent's first reply already gave a value below α, so the MIN node could never return more than α and its remaining two replies were skipped. Pruning saved work without changing the result, as alpha-beta guarantees. The Star1 rule applies the same idea across the noisy samples of a chance node.</div>
+
+  <h3>Step 4: Monte Carlo Tree Search</h3>
+  <figure><img class="plain" src="file:///F:/E/Downloads/Need2livewebsite/cuemind/docs/media/fig_mcts_tree_light.png" style="width:100%"><figcaption>Figure 11. MCTS tree after 160 iterations (592 physics simulations, depth 3). Most-visited child highlighted.</figcaption></figure>
+  <div class="note"><b>UCB1 worked example</b> for the most-visited child "2 → bottom side, soft": N = 23, W = 14.96, so Q = 14.96 / 23 = 0.651. The exploration term is 1.4 × √(ln 160 / 23) = 1.4 × √(5.075 / 23) = 0.658, so UCB1 = 0.651 + 0.658 = 1.308. A less-visited child such as "2 → bottom-left, soft" (N = 16, Q = 0.505) gets a larger exploration term (0.788), so its UCB1 (1.293) stays close. All children end near 1.30, which is UCB1 balancing exploration and exploitation.</div>
+</section>
+
+<section>
+  <div class="two">
+    <figure><img class="plain" src="file:///F:/E/Downloads/Need2livewebsite/cuemind/docs/media/fig_mcts_visits_light.png"><figcaption>Figure 12. Visits of each root shot over the 160 iterations.</figcaption></figure>
+    <div>
+      <table>
+        <tr><th>Iter</th><th>Root shot selected</th><th class="num">Reward</th><th class="num">N</th><th class="num">Q</th></tr>
+        <tr><td>1</td><td>2 → bottom side, soft</td><td class="num">0.788</td><td class="num">1</td><td class="num">0.788</td></tr>
+        <tr><td>2</td><td>2 → bottom side, medium</td><td class="num">0.520</td><td class="num">1</td><td class="num">0.520</td></tr>
+        <tr><td>3</td><td>2 → bottom side, firm</td><td class="num">0.514</td><td class="num">1</td><td class="num">0.514</td></tr>
+        <tr><td>4</td><td>2 → bottom side, soft</td><td class="num">0.390</td><td class="num">2</td><td class="num">0.589</td></tr>
+        <tr><td>5</td><td>9 → bottom-right, soft</td><td class="num">0.793</td><td class="num">1</td><td class="num">0.793</td></tr>
+        <tr><td>6</td><td>9 → bottom-right, soft</td><td class="num">0.650</td><td class="num">2</td><td class="num">0.722</td></tr>
+        <tr><td>7</td><td>2 → bottom side, medium</td><td class="num">0.635</td><td class="num">2</td><td class="num">0.578</td></tr>
+        <tr><td>8</td><td>9 → bottom-right, medium</td><td class="num">0.805</td><td class="num">1</td><td class="num">0.805</td></tr>
+      </table>
+    </div>
+  </div>
+  <p>Progressive widening opens new root children slowly: one child at first, more as visits grow (⌈1.5·√(N+1)⌉). The first iterations therefore alternate between expanding new shots in heuristic order and revisiting the best ones. Each iteration replays the selected shots with fresh noise, adds one greedy play-out shot and backs up a reward between 0 and 1. After 160 iterations the root's most-visited child is <b>2 → bottom side, soft</b> (23 visits, Q = 0.65), which MCTS plays.</p>
+
+  <h3>Step 5: comparing the three decisions</h3>
+  <table>
+    <tr><th style="width:15%">Agent</th><th style="width:28%">Decision</th><th>Reason</th></tr>
+    <tr><td>Greedy</td><td>2 → bottom side, soft</td><td>Highest single-shot heuristic (0.994); no look-ahead</td></tr>
+    <tr><td>Minimax</td><td>2 → bottom side, medium</td><td>Depth 2 sees the follow-up pot on ball 15; value +2.79 vs +1.53 for soft</td></tr>
+    <tr><td>MCTS</td><td>2 → bottom side, soft</td><td>Most visits (23 of 160) after noisy play-outs; Q = 0.65</td></tr>
+  </table>
+  <p>All three agents choose to pot ball 2 into the bottom side pocket, which confirms that the heuristic ranks pots sensibly. They differ on power. Minimax's exhaustive depth-2 search plans the cue-ball position for the next shot. MCTS, with one play-out shot and noisy estimates, found that the extra power did not clearly pay off within 160 iterations. This trade-off between systematic look-ahead and sampled estimates is exactly what the benchmark measures.</p>
+  <div class="two">
+    <figure><img src="file:///F:/E/Downloads/Need2livewebsite/cuemind/docs/media/09_pot.png"><figcaption>Figure 13. A pot during an AI vs AI match: score pop-up and rack tracker update.</figcaption></figure>
+    <figure><img src="file:///F:/E/Downloads/Need2livewebsite/cuemind/docs/media/10_results.png"><figcaption>Figure 14. Results screen with per-player statistics.</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ 7-8 ============ -->
+<section class="brk">
+  <h2><span class="n">7</span>Results and evaluation</h2>
+  <p>Benchmark mode plays silent matches with identical physics and execution noise for both sides; each agent gets 0.6 s of thinking per shot, charged to its clock, and the breaker alternates each game. We ran 40 matches.</p>
+  <figure><img class="plain" src="file:///F:/E/Downloads/Need2livewebsite/cuemind/docs/media/fig_benchmark_light.png" style="width:88%"><figcaption>Figure 15. Win share per matchup.</figcaption></figure>
+  <table>
+    <tr><th>Matchup (A vs B)</th><th class="num">Matches</th><th class="num">Wins A</th><th class="num">Wins B</th><th class="num">Avg score A</th><th class="num">Avg score B</th><th class="num">Fouls / match A</th><th class="num">Fouls / match B</th></tr>
+    <tr><td>Minimax vs MCTS</td><td class="num">20</td><td class="num">9</td><td class="num">11</td><td class="num">7.55</td><td class="num">9.15</td><td class="num">0.20</td><td class="num">0.10</td></tr>
+    <tr><td>Greedy vs Minimax</td><td class="num">10</td><td class="num">1</td><td class="num">9</td><td class="num">5.10</td><td class="num">11.60</td><td class="num">0.10</td><td class="num">0.20</td></tr>
+    <tr><td>Greedy vs MCTS</td><td class="num">10</td><td class="num">3</td><td class="num">7</td><td class="num">7.60</td><td class="num">9.20</td><td class="num">0.20</td><td class="num">0.00</td></tr>
+  </table>
+  <ul>
+    <li>Both search agents clearly beat the greedy baseline (9–1 and 7–3), so looking ahead pays off even under shot noise.</li>
+    <li>MCTS edged Minimax 11–9 with a higher average score (9.15 vs 7.55). Twenty matches are too few to call this difference significant; the two are close at this time budget.</li>
+    <li>Fouls are rare for every agent (at most 0.2 per match), because both the search and the evaluation penalize scratches.</li>
+  </ul>
+  <figure><img src="file:///F:/E/Downloads/Need2livewebsite/cuemind/docs/media/13_benchmark.png" style="width:70%"><figcaption>Figure 16. Benchmark screen with the 20-match Minimax vs MCTS results.</figcaption></figure>
+
+  <h2 style="margin-top:6px"><span class="n">8</span>Conclusion and future work</h2>
+  <p>CueMind shows that classic search algorithms adapt well to a continuous, stochastic game once the game is reduced to a small set of meaningful moves. The ghost-ball shot finder, built from DLS, IDDFS and bidirectional search, turns infinite angles into a few dozen candidates. A* and Greedy rank them, and Minimax (with chance nodes, Star1 pruning and IDDFS) and MCTS (with UCB1) decide under a real time limit. Both agents are fully functional and beat the greedy baseline. The step-by-step trace shows Minimax changing its decision as it searches deeper, and MCTS converging through UCB1.</p>
+  <p><b>Future work:</b> add spin (top/back/side) to give position play more control; parallelize MCTS play-outs across CPU cores; learn the evaluation weights from benchmark data; and run larger benchmarks with confidence intervals for each time budget.</p>
+</section>
+
+</body>
+</html>

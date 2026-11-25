@@ -1,0 +1,3166 @@
+{
+ "scenario": {
+  "balls": {
+   "0": [
+    632.6,
+    331.8
+   ],
+   "1": [
+    620.5,
+    32.4
+   ],
+   "2": [
+    576.7,
+    375.2
+   ],
+   "3": [
+    803.4,
+    225.1
+   ],
+   "4": [
+    661.2,
+    468.6
+   ],
+   "5": [
+    943.2,
+    297.1
+   ],
+   "6": [
+    772.4,
+    223.8
+   ],
+   "7": [
+    739.7,
+    267.3
+   ],
+   "8": [
+    769.5,
+    264.8
+   ],
+   "9": [
+    752.4,
+    417.7
+   ],
+   "10": [
+    743.9,
+    218.1
+   ],
+   "11": [
+    872.3,
+    265.4
+   ],
+   "12": [
+    786.7,
+    17.0
+   ],
+   "13": [
+    701.5,
+    28.6
+   ],
+   "14": [
+    870.8,
+    241.5
+   ],
+   "15": [
+    840.2,
+    32.3
+   ]
+  },
+  "scores": [
+   0,
+   0
+  ],
+  "clocks": [
+   60.0,
+   60.0
+  ],
+  "turn": 0,
+  "potted_on_break": []
+ },
+ "kinds": {
+  "direct": 16,
+  "combo": 1,
+  "bank": 11,
+  "safety": 22
+ },
+ "heuristic": [
+  {
+   "ball": 2,
+   "pocket": "bottom side",
+   "d1": 50.5,
+   "d2": 145.6,
+   "cut": 33.9,
+   "alpha_deg": 4.91,
+   "sigma_deg": 0.794,
+   "p": 0.994,
+   "points": 1,
+   "value": 0.994,
+   "speed": 386,
+   "ghost": [
+    587.7,
+    355.0
+   ]
+  },
+  {
+   "ball": 9,
+   "pocket": "bottom-right",
+   "d1": 125.4,
+   "d2": 256.8,
+   "cut": 19.0,
+   "alpha_deg": 3.59,
+   "sigma_deg": 1.73,
+   "p": 0.962,
+   "points": 1,
+   "value": 0.962,
+   "speed": 512,
+   "ghost": [
+    730.7,
+    410.0
+   ]
+  },
+  {
+   "ball": 2,
+   "pocket": "bottom-left",
+   "d1": 50.9,
+   "d2": 585.2,
+   "cut": 35.9,
+   "alpha_deg": 1.58,
+   "sigma_deg": 0.819,
+   "p": 0.938,
+   "points": 1,
+   "value": 0.938,
+   "speed": 843,
+   "ghost": [
+    599.1,
+    370.1
+   ]
+  },
+  {
+   "ball": 10,
+   "pocket": "top-right",
+   "d1": 136.2,
+   "d2": 333.5,
+   "cut": 5.9,
+   "alpha_deg": 2.77,
+   "sigma_deg": 1.786,
+   "p": 0.879,
+   "points": 1,
+   "value": 0.879,
+   "speed": 564,
+   "ghost": [
+    726.4,
+    233.1
+   ]
+  },
+  {
+   "ball": 15,
+   "pocket": "top-right",
+   "d1": 347.6,
+   "d2": 158.1,
+   "cut": 44.0,
+   "alpha_deg": 5.82,
+   "sigma_deg": 6.306,
+   "p": 0.632,
+   "points": 1,
+   "value": 0.632,
+   "speed": 680,
+   "ghost": [
+    817.9,
+    37.7
+   ]
+  },
+  {
+   "ball": 5,
+   "pocket": "top-right",
+   "d1": 306.0,
+   "d2": 297.4,
+   "cut": 75.6,
+   "alpha_deg": 3.1,
+   "sigma_deg": 16.023,
+   "p": 0.13,
+   "points": 1,
+   "value": 0.13,
+   "speed": 1889,
+   "ghost": [
+    938.4,
+    319.5
+   ]
+  }
+ ],
+ "astar": {
+  "plan": [
+   [
+    2,
+    "bottom side"
+   ],
+   [
+    4,
+    "bottom-right"
+   ],
+   [
+    9,
+    "bottom-right"
+   ],
+   [
+    7,
+    "top side"
+   ],
+   [
+    8,
+    "top-right"
+   ]
+  ],
+  "cost": 2.28,
+  "expansions": 24,
+  "targets": [
+   2,
+   4,
+   7,
+   8,
+   9
+  ],
+  "log": [
+   {
+    "step": 1,
+    "path": [],
+    "g": 0.0,
+    "h": 0.75,
+    "f": 0.75,
+    "children": 3
+   },
+   {
+    "step": 2,
+    "path": [
+     "2->bottom side"
+    ],
+    "g": 0.156,
+    "h": 0.6,
+    "f": 0.756,
+    "children": 2
+   },
+   {
+    "step": 3,
+    "path": [
+     "9->bottom-right"
+    ],
+    "g": 0.202,
+    "h": 0.6,
+    "f": 0.802,
+    "children": 6
+   },
+   {
+    "step": 4,
+    "path": [
+     "2->bottom-left"
+    ],
+    "g": 0.221,
+    "h": 0.6,
+    "f": 0.821,
+    "children": 2
+   },
+   {
+    "step": 5,
+    "path": [
+     "2->bottom side",
+     "9->bottom-right"
+    ],
+    "g": 0.401,
+    "h": 0.45,
+    "f": 0.851,
+    "children": 3
+   },
+   {
+    "step": 6,
+    "path": [
+     "9->bottom-right",
+     "4->bottom-left"
+    ],
+    "g": 0.782,
+    "h": 0.45,
+    "f": 1.232,
+    "children": 5
+   },
+   {
+    "step": 7,
+    "path": [
+     "2->bottom side",
+     "9->bottom-right",
+     "4->bottom-left"
+    ],
+    "g": 0.981,
+    "h": 0.3,
+    "f": 1.281,
+    "children": 2
+   },
+   {
+    "step": 8,
+    "path": [
+     "2->bottom side",
+     "4->bottom-right"
+    ],
+    "g": 0.861,
+    "h": 0.45,
+    "f": 1.311,
+    "children": 3
+   },
+   {
+    "step": 9,
+    "path": [
+     "9->bottom-right",
+     "2->bottom-left"
+    ],
+    "g": 0.967,
+    "h": 0.45,
+    "f": 1.417,
+    "children": 1
+   },
+   {
+    "step": 10,
+    "path": [
+     "2->bottom side",
+     "4->bottom-right",
+     "9->bottom-right"
+    ],
+    "g": 1.181,
+    "h": 0.3,
+    "f": 1.481,
+    "children": 2
+   },
+   {
+    "step": 11,
+    "path": [
+     "9->bottom-right",
+     "2->top-left"
+    ],
+    "g": 1.045,
+    "h": 0.45,
+    "f": 1.495,
+    "children": 1
+   },
+   {
+    "step": 12,
+    "path": [
+     "9->bottom-right",
+     "7->top side"
+    ],
+    "g": 1.131,
+    "h": 0.45,
+    "f": 1.581,
+    "children": 5
+   }
+  ],
+  "time_cost": 0.15
+ },
+ "minimax": {
+  "iddfs": [
+   {
+    "depth": 1,
+    "values": [
+     [
+      "2 into bottom side, soft",
+      1.632
+     ],
+     [
+      "2 into bottom side, medium",
+      1.548
+     ],
+     [
+      "2 into bottom side, firm",
+      1.514
+     ],
+     [
+      "9 into bottom-right, soft",
+      0.5
+     ]
+    ],
+    "best": "2 into bottom side, soft",
+    "sims": 8,
+    "pruned": 0,
+    "nodes": 21
+   },
+   {
+    "depth": 2,
+    "values": [
+     [
+      "2 into bottom side, soft",
+      1.528
+     ],
+     [
+      "2 into bottom side, medium",
+      2.789
+     ],
+     [
+      "2 into bottom side, firm",
+      2.674
+     ],
+     [
+      "9 into bottom-right, soft",
+      -0.5
+     ]
+    ],
+    "best": "2 into bottom side, medium",
+    "sims": 30,
+    "pruned": 2,
+    "nodes": 87
+   }
+  ],
+  "tree": [
+   {
+    "id": 0,
+    "parent": null,
+    "kind": "ROOT",
+    "label": "Minimax to move (MAX)",
+    "value": 2.789
+   },
+   {
+    "id": 1,
+    "parent": 0,
+    "kind": "CHANCE",
+    "label": "2 into bottom side, soft",
+    "alpha": -Infinity,
+    "beta": Infinity,
+    "value": 1.528
+   },
+   {
+    "id": 2,
+    "parent": 1,
+    "kind": "SAMPLE",
+    "label": "sample 1: pot 2",
+    "score": [
+     1,
+     0
+    ],
+    "turn": 0,
+    "value": 0.422
+   },
+   {
+    "id": 3,
+    "parent": 2,
+    "kind": "MAX",
+    "label": "MAX (Minimax)",
+    "value": 0.422
+   },
+   {
+    "id": 4,
+    "parent": 3,
+    "kind": "CHANCE",
+    "label": "9 into bottom-right, soft",
+    "alpha": -21.0,
+    "beta": 21.0,
+    "value": 0.17
+   },
+   {
+    "id": 5,
+    "parent": 4,
+    "kind": "SAMPLE",
+    "label": "sample 1: no pot",
+    "score": [
+     1,
+     0
+    ],
+    "turn": 1,
+    "value": 0.17
+   },
+   {
+    "id": 6,
+    "parent": 5,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 0.17,
+    "q": 0.922
+   },
+   {
+    "id": 7,
+    "parent": 3,
+    "kind": "CHANCE",
+    "label": "9 into bottom-right, medium",
+    "alpha": 0.1702095592713455,
+    "beta": 21.0,
+    "value": 0.189
+   },
+   {
+    "id": 8,
+    "parent": 7,
+    "kind": "SAMPLE",
+    "label": "sample 1: no pot",
+    "score": [
+     1,
+     0
+    ],
+    "turn": 1,
+    "value": 0.189
+   },
+   {
+    "id": 9,
+    "parent": 8,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 0.189,
+    "q": 0.902
+   },
+   {
+    "id": 10,
+    "parent": 3,
+    "kind": "CHANCE",
+    "label": "9 into bottom-right, firm",
+    "alpha": 0.18854427584048006,
+    "beta": 21.0,
+    "value": 0.422
+   },
+   {
+    "id": 11,
+    "parent": 10,
+    "kind": "SAMPLE",
+    "label": "sample 1: no pot",
+    "score": [
+     1,
+     0
+    ],
+    "turn": 1,
+    "value": 0.422
+   },
+   {
+    "id": 12,
+    "parent": 11,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 0.422,
+    "q": 0.642
+   },
+   {
+    "id": 13,
+    "parent": 1,
+    "kind": "SAMPLE",
+    "label": "sample 2: pot 2",
+    "score": [
+     1,
+     0
+    ],
+    "turn": 0,
+    "value": 2.634
+   },
+   {
+    "id": 14,
+    "parent": 13,
+    "kind": "MAX",
+    "label": "MAX (Minimax)",
+    "value": 2.634
+   },
+   {
+    "id": 15,
+    "parent": 14,
+    "kind": "CHANCE",
+    "label": "9 into bottom-right, soft",
+    "alpha": -21.0,
+    "beta": 21.0,
+    "value": 0.265
+   },
+   {
+    "id": 16,
+    "parent": 15,
+    "kind": "SAMPLE",
+    "label": "sample 1: no pot",
+    "score": [
+     1,
+     0
+    ],
+    "turn": 1,
+    "value": 0.265
+   },
+   {
+    "id": 17,
+    "parent": 16,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 0.265,
+    "q": 0.816
+   },
+   {
+    "id": 18,
+    "parent": 14,
+    "kind": "CHANCE",
+    "label": "9 into bottom-right, medium",
+    "alpha": 0.2652709165982049,
+    "beta": 21.0,
+    "value": 2.634
+   },
+   {
+    "id": 19,
+    "parent": 18,
+    "kind": "SAMPLE",
+    "label": "sample 1: pot 9",
+    "score": [
+     2,
+     0
+    ],
+    "turn": 0,
+    "value": 2.634
+   },
+   {
+    "id": 20,
+    "parent": 19,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 2.634,
+    "q": 0.705
+   },
+   {
+    "id": 21,
+    "parent": 14,
+    "kind": "CHANCE",
+    "label": "9 into bottom-right, firm",
+    "alpha": 2.634404577642883,
+    "beta": 21.0,
+    "value": 0.368,
+    "cut": "Star1 cut: 0 sample(s) skipped"
+   },
+   {
+    "id": 22,
+    "parent": 21,
+    "kind": "SAMPLE",
+    "label": "sample 1: no pot",
+    "score": [
+     1,
+     0
+    ],
+    "turn": 1,
+    "value": 0.368
+   },
+   {
+    "id": 23,
+    "parent": 22,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 0.368,
+    "q": 0.703
+   },
+   {
+    "id": 24,
+    "parent": 0,
+    "kind": "CHANCE",
+    "label": "2 into bottom side, medium",
+    "alpha": 1.5282496265328935,
+    "beta": Infinity,
+    "value": 2.789
+   },
+   {
+    "id": 25,
+    "parent": 24,
+    "kind": "SAMPLE",
+    "label": "sample 1: pot 2",
+    "score": [
+     1,
+     0
+    ],
+    "turn": 0,
+    "value": 2.896
+   },
+   {
+    "id": 26,
+    "parent": 25,
+    "kind": "MAX",
+    "label": "MAX (Minimax)",
+    "value": 2.896
+   },
+   {
+    "id": 27,
+    "parent": 26,
+    "kind": "CHANCE",
+    "label": "15 into top-right, soft",
+    "alpha": -16.943500746934212,
+    "beta": 21.0,
+    "value": 0.245
+   },
+   {
+    "id": 28,
+    "parent": 27,
+    "kind": "SAMPLE",
+    "label": "sample 1: no pot",
+    "score": [
+     1,
+     0
+    ],
+    "turn": 1,
+    "value": 0.245
+   },
+   {
+    "id": 29,
+    "parent": 28,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 0.245,
+    "q": 0.839
+   },
+   {
+    "id": 30,
+    "parent": 26,
+    "kind": "CHANCE",
+    "label": "15 into top-right, medium",
+    "alpha": 0.24480074761151116,
+    "beta": 21.0,
+    "value": 2.705
+   },
+   {
+    "id": 31,
+    "parent": 30,
+    "kind": "SAMPLE",
+    "label": "sample 1: pot 15",
+    "score": [
+     2,
+     0
+    ],
+    "turn": 0,
+    "value": 2.705
+   },
+   {
+    "id": 32,
+    "parent": 31,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 2.705,
+    "q": 0.784
+   },
+   {
+    "id": 33,
+    "parent": 26,
+    "kind": "CHANCE",
+    "label": "15 into top-right, firm",
+    "alpha": 2.705254094782052,
+    "beta": 21.0,
+    "value": 2.896
+   },
+   {
+    "id": 34,
+    "parent": 33,
+    "kind": "SAMPLE",
+    "label": "sample 1: pot 15",
+    "score": [
+     2,
+     0
+    ],
+    "turn": 0,
+    "value": 2.896
+   },
+   {
+    "id": 35,
+    "parent": 34,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 2.896,
+    "q": 0.995
+   },
+   {
+    "id": 36,
+    "parent": 24,
+    "kind": "SAMPLE",
+    "label": "sample 2: pot 2",
+    "score": [
+     1,
+     0
+    ],
+    "turn": 0,
+    "value": 2.683
+   },
+   {
+    "id": 37,
+    "parent": 36,
+    "kind": "MAX",
+    "label": "MAX (Minimax)",
+    "value": 2.683
+   },
+   {
+    "id": 38,
+    "parent": 37,
+    "kind": "CHANCE",
+    "label": "15 into top-right, soft",
+    "alpha": 0.16099925306578688,
+    "beta": 21.0,
+    "value": 2.683
+   },
+   {
+    "id": 39,
+    "parent": 38,
+    "kind": "SAMPLE",
+    "label": "sample 1: pot 15",
+    "score": [
+     2,
+     0
+    ],
+    "turn": 0,
+    "value": 2.683
+   },
+   {
+    "id": 40,
+    "parent": 39,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 2.683,
+    "q": 0.759
+   },
+   {
+    "id": 41,
+    "parent": 37,
+    "kind": "CHANCE",
+    "label": "15 into top-right, medium",
+    "alpha": 2.682851928629012,
+    "beta": 21.0,
+    "value": 0.507,
+    "cut": "Star1 cut: 0 sample(s) skipped"
+   },
+   {
+    "id": 42,
+    "parent": 41,
+    "kind": "SAMPLE",
+    "label": "sample 1: no pot",
+    "score": [
+     1,
+     0
+    ],
+    "turn": 1,
+    "value": 0.507
+   },
+   {
+    "id": 43,
+    "parent": 42,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 0.507,
+    "q": 0.548
+   },
+   {
+    "id": 44,
+    "parent": 37,
+    "kind": "CHANCE",
+    "label": "15 into top-right, firm",
+    "alpha": 2.682851928629012,
+    "beta": 21.0,
+    "value": 0.286,
+    "cut": "Star1 cut: 0 sample(s) skipped"
+   },
+   {
+    "id": 45,
+    "parent": 44,
+    "kind": "SAMPLE",
+    "label": "sample 1: no pot",
+    "score": [
+     1,
+     0
+    ],
+    "turn": 1,
+    "value": 0.286
+   },
+   {
+    "id": 46,
+    "parent": 45,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 0.286,
+    "q": 0.793
+   },
+   {
+    "id": 47,
+    "parent": 0,
+    "kind": "CHANCE",
+    "label": "2 into bottom side, firm",
+    "alpha": 2.7891759643145058,
+    "beta": Infinity,
+    "value": 2.674,
+    "cut": "Star1 cut: 0 sample(s) skipped"
+   },
+   {
+    "id": 48,
+    "parent": 47,
+    "kind": "SAMPLE",
+    "label": "sample 1: pot 2",
+    "score": [
+     1,
+     0
+    ],
+    "turn": 0,
+    "value": 2.683
+   },
+   {
+    "id": 49,
+    "parent": 48,
+    "kind": "MAX",
+    "label": "MAX (Minimax)",
+    "value": 2.683
+   },
+   {
+    "id": 50,
+    "parent": 49,
+    "kind": "CHANCE",
+    "label": "15 into top-right, soft",
+    "alpha": -14.421648071370988,
+    "beta": 21.0,
+    "value": 0.209
+   },
+   {
+    "id": 51,
+    "parent": 50,
+    "kind": "SAMPLE",
+    "label": "sample 1: no pot",
+    "score": [
+     1,
+     0
+    ],
+    "turn": 1,
+    "value": 0.209
+   },
+   {
+    "id": 52,
+    "parent": 51,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 0.209,
+    "q": 0.879
+   },
+   {
+    "id": 53,
+    "parent": 49,
+    "kind": "CHANCE",
+    "label": "15 into top-right, medium",
+    "alpha": 0.20866338147309116,
+    "beta": 21.0,
+    "value": 2.661
+   },
+   {
+    "id": 54,
+    "parent": 53,
+    "kind": "SAMPLE",
+    "label": "sample 1: pot 15",
+    "score": [
+     2,
+     0
+    ],
+    "turn": 0,
+    "value": 2.661
+   },
+   {
+    "id": 55,
+    "parent": 54,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 2.661,
+    "q": 0.735
+   },
+   {
+    "id": 56,
+    "parent": 49,
+    "kind": "CHANCE",
+    "label": "15 into top-right, firm",
+    "alpha": 2.6613913831291134,
+    "beta": 21.0,
+    "value": 2.683
+   },
+   {
+    "id": 57,
+    "parent": 56,
+    "kind": "SAMPLE",
+    "label": "sample 1: pot 15",
+    "score": [
+     2,
+     0
+    ],
+    "turn": 0,
+    "value": 2.683
+   },
+   {
+    "id": 58,
+    "parent": 57,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 2.683,
+    "q": 0.759
+   },
+   {
+    "id": 59,
+    "parent": 47,
+    "kind": "SAMPLE",
+    "label": "sample 2: pot 2",
+    "score": [
+     1,
+     0
+    ],
+    "turn": 0,
+    "value": 2.665
+   },
+   {
+    "id": 60,
+    "parent": 59,
+    "kind": "MAX",
+    "label": "MAX (Minimax)",
+    "value": 2.665
+   },
+   {
+    "id": 61,
+    "parent": 60,
+    "kind": "CHANCE",
+    "label": "15 into top-right, soft",
+    "alpha": 2.8950061426644944,
+    "beta": 21.0,
+    "value": 0.306,
+    "cut": "Star1 cut: 0 sample(s) skipped"
+   },
+   {
+    "id": 62,
+    "parent": 61,
+    "kind": "SAMPLE",
+    "label": "sample 1: no pot",
+    "score": [
+     1,
+     0
+    ],
+    "turn": 1,
+    "value": 0.306
+   },
+   {
+    "id": 63,
+    "parent": 62,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 0.306,
+    "q": 0.771
+   },
+   {
+    "id": 64,
+    "parent": 60,
+    "kind": "CHANCE",
+    "label": "15 into top-right, medium",
+    "alpha": 2.8950061426644944,
+    "beta": 21.0,
+    "value": 2.665,
+    "cut": "Star1 cut: 0 sample(s) skipped"
+   },
+   {
+    "id": 65,
+    "parent": 64,
+    "kind": "SAMPLE",
+    "label": "sample 1: pot 15",
+    "score": [
+     2,
+     0
+    ],
+    "turn": 0,
+    "value": 2.665
+   },
+   {
+    "id": 66,
+    "parent": 65,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 2.665,
+    "q": 0.739
+   },
+   {
+    "id": 67,
+    "parent": 60,
+    "kind": "CHANCE",
+    "label": "15 into top-right, firm",
+    "alpha": 2.8950061426644944,
+    "beta": 21.0,
+    "value": 2.665,
+    "cut": "Star1 cut: 0 sample(s) skipped"
+   },
+   {
+    "id": 68,
+    "parent": 67,
+    "kind": "SAMPLE",
+    "label": "sample 1: pot 15",
+    "score": [
+     2,
+     0
+    ],
+    "turn": 0,
+    "value": 2.665
+   },
+   {
+    "id": 69,
+    "parent": 68,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 2.665,
+    "q": 0.739
+   },
+   {
+    "id": 70,
+    "parent": 0,
+    "kind": "CHANCE",
+    "label": "9 into bottom-right, soft",
+    "alpha": 2.7891759643145058,
+    "beta": Infinity,
+    "value": -0.5,
+    "cut": "Star1 cut: 0 sample(s) skipped"
+   },
+   {
+    "id": 71,
+    "parent": 70,
+    "kind": "SAMPLE",
+    "label": "sample 1: no pot",
+    "score": [
+     0,
+     0
+    ],
+    "turn": 1,
+    "value": -1.895
+   },
+   {
+    "id": 72,
+    "parent": 71,
+    "kind": "MIN",
+    "label": "MIN (opponent)",
+    "value": -1.895
+   },
+   {
+    "id": 73,
+    "parent": 72,
+    "kind": "CHANCE",
+    "label": "4 into bottom-left, soft",
+    "alpha": -14.421648071370988,
+    "beta": 21.0,
+    "value": 0.895
+   },
+   {
+    "id": 74,
+    "parent": 73,
+    "kind": "SAMPLE",
+    "label": "sample 1: no pot",
+    "score": [
+     0,
+     0
+    ],
+    "turn": 0,
+    "value": 0.895
+   },
+   {
+    "id": 75,
+    "parent": 74,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 0.895,
+    "q": 0.995
+   },
+   {
+    "id": 76,
+    "parent": 72,
+    "kind": "CHANCE",
+    "label": "4 into bottom-left, medium",
+    "alpha": -14.421648071370988,
+    "beta": 0.8955,
+    "value": -1.895
+   },
+   {
+    "id": 77,
+    "parent": 76,
+    "kind": "SAMPLE",
+    "label": "sample 1: pot 4",
+    "score": [
+     0,
+     1
+    ],
+    "turn": 1,
+    "value": -1.895
+   },
+   {
+    "id": 78,
+    "parent": 77,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": -1.895,
+    "q": 0.995
+   },
+   {
+    "id": 79,
+    "parent": 72,
+    "kind": "CHANCE",
+    "label": "4 into bottom-left, firm",
+    "alpha": -14.421648071370988,
+    "beta": -1.8955,
+    "value": -1.895
+   },
+   {
+    "id": 80,
+    "parent": 79,
+    "kind": "SAMPLE",
+    "label": "sample 1: pot 4",
+    "score": [
+     0,
+     1
+    ],
+    "turn": 1,
+    "value": -1.895
+   },
+   {
+    "id": 81,
+    "parent": 80,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": -1.895,
+    "q": 0.995
+   },
+   {
+    "id": 82,
+    "parent": 70,
+    "kind": "SAMPLE",
+    "label": "sample 2: no pot",
+    "score": [
+     0,
+     0
+    ],
+    "turn": 1,
+    "value": 0.895
+   },
+   {
+    "id": 83,
+    "parent": 82,
+    "kind": "MIN",
+    "label": "MIN (opponent)",
+    "cut": "alpha-beta cut: 2 shot(s) skipped",
+    "value": 0.895
+   },
+   {
+    "id": 84,
+    "parent": 83,
+    "kind": "CHANCE",
+    "label": "4 into bottom-left, soft",
+    "alpha": 7.473851928629012,
+    "beta": 21.0,
+    "value": 0.895,
+    "cut": "Star1 cut: 0 sample(s) skipped"
+   },
+   {
+    "id": 85,
+    "parent": 84,
+    "kind": "SAMPLE",
+    "label": "sample 1: no pot",
+    "score": [
+     0,
+     0
+    ],
+    "turn": 0,
+    "value": 0.895
+   },
+   {
+    "id": 86,
+    "parent": 85,
+    "kind": "LEAF",
+    "label": "eval",
+    "value": 0.895,
+    "q": 0.995
+   }
+  ],
+  "settings": {
+   "root_width": 4,
+   "inner_width": 3,
+   "samples_root": 2,
+   "samples_inner": 1
+  }
+ },
+ "mcts": {
+  "iterations": 160,
+  "root_N": 160,
+  "C": 1.4,
+  "children": [
+   {
+    "action": "2 into bottom side, soft",
+    "N": 23,
+    "W": 14.96,
+    "Q": 0.651,
+    "explore": 0.658,
+    "ucb1": 1.308,
+    "grand": [
+     [
+      0,
+      6,
+      0.673
+     ],
+     [
+      1,
+      6,
+      0.684
+     ],
+     [
+      2,
+      5,
+      0.604
+     ]
+    ]
+   },
+   {
+    "action": "9 into bottom-right, firm",
+    "N": 22,
+    "W": 13.63,
+    "Q": 0.62,
+    "explore": 0.672,
+    "ucb1": 1.292,
+    "grand": [
+     [
+      1,
+      7,
+      0.737
+     ],
+     [
+      2,
+      6,
+      0.541
+     ],
+     [
+      0,
+      4,
+      0.42
+     ]
+    ]
+   },
+   {
+    "action": "2 into bottom side, medium",
+    "N": 21,
+    "W": 12.78,
+    "Q": 0.608,
+    "explore": 0.688,
+    "ucb1": 1.297,
+    "grand": [
+     [
+      2,
+      6,
+      0.715
+     ],
+     [
+      1,
+      5,
+      0.679
+     ],
+     [
+      3,
+      5,
+      0.613
+     ]
+    ]
+   },
+   {
+    "action": "9 into bottom-right, soft",
+    "N": 21,
+    "W": 12.46,
+    "Q": 0.593,
+    "explore": 0.688,
+    "ucb1": 1.281,
+    "grand": [
+     [
+      1,
+      6,
+      0.598
+     ],
+     [
+      2,
+      6,
+      0.694
+     ],
+     [
+      0,
+      4,
+      0.518
+     ]
+    ]
+   },
+   {
+    "action": "9 into bottom-right, medium",
+    "N": 21,
+    "W": 12.84,
+    "Q": 0.612,
+    "explore": 0.688,
+    "ucb1": 1.3,
+    "grand": [
+     [
+      1,
+      6,
+      0.636
+     ],
+     [
+      2,
+      6,
+      0.588
+     ],
+     [
+      0,
+      4,
+      0.355
+     ]
+    ]
+   },
+   {
+    "action": "2 into bottom-left, medium",
+    "N": 19,
+    "W": 10.97,
+    "Q": 0.577,
+    "explore": 0.724,
+    "ucb1": 1.301,
+    "grand": [
+     [
+      2,
+      6,
+      0.656
+     ],
+     [
+      0,
+      4,
+      0.532
+     ],
+     [
+      1,
+      4,
+      0.522
+     ]
+    ]
+   },
+   {
+    "action": "2 into bottom side, firm",
+    "N": 17,
+    "W": 9.22,
+    "Q": 0.542,
+    "explore": 0.765,
+    "ucb1": 1.307,
+    "grand": [
+     [
+      1,
+      5,
+      0.625
+     ],
+     [
+      0,
+      4,
+      0.419
+     ],
+     [
+      2,
+      4,
+      0.636
+     ]
+    ]
+   },
+   {
+    "action": "2 into bottom-left, soft",
+    "N": 16,
+    "W": 8.07,
+    "Q": 0.505,
+    "explore": 0.788,
+    "ucb1": 1.293,
+    "grand": [
+     [
+      1,
+      4,
+      0.586
+     ],
+     [
+      2,
+      4,
+      0.47
+     ],
+     [
+      3,
+      4,
+      0.543
+     ]
+    ]
+   }
+  ],
+  "log": [
+   {
+    "iter": 1,
+    "root_action": "2 into bottom side, soft",
+    "reward": 0.788,
+    "N": 1,
+    "Q": 0.788
+   },
+   {
+    "iter": 2,
+    "root_action": "2 into bottom side, medium",
+    "reward": 0.52,
+    "N": 1,
+    "Q": 0.52
+   },
+   {
+    "iter": 3,
+    "root_action": "2 into bottom side, firm",
+    "reward": 0.514,
+    "N": 1,
+    "Q": 0.514
+   },
+   {
+    "iter": 4,
+    "root_action": "2 into bottom side, soft",
+    "reward": 0.39,
+    "N": 2,
+    "Q": 0.589
+   },
+   {
+    "iter": 5,
+    "root_action": "9 into bottom-right, soft",
+    "reward": 0.793,
+    "N": 1,
+    "Q": 0.793
+   },
+   {
+    "iter": 6,
+    "root_action": "9 into bottom-right, soft",
+    "reward": 0.65,
+    "N": 2,
+    "Q": 0.722
+   },
+   {
+    "iter": 7,
+    "root_action": "2 into bottom side, medium",
+    "reward": 0.635,
+    "N": 2,
+    "Q": 0.578
+   },
+   {
+    "iter": 8,
+    "root_action": "9 into bottom-right, medium",
+    "reward": 0.805,
+    "N": 1,
+    "Q": 0.805
+   },
+   {
+    "iter": 9,
+    "root_action": "9 into bottom-right, medium",
+    "reward": 0.657,
+    "N": 2,
+    "Q": 0.731
+   },
+   {
+    "iter": 10,
+    "root_action": "2 into bottom side, firm",
+    "reward": 0.392,
+    "N": 2,
+    "Q": 0.453
+   },
+   {
+    "iter": 11,
+    "root_action": "9 into bottom-right, medium",
+    "reward": 0.86,
+    "N": 3,
+    "Q": 0.774
+   },
+   {
+    "iter": 12,
+    "root_action": "9 into bottom-right, firm",
+    "reward": 0.513,
+    "N": 1,
+    "Q": 0.513
+   }
+  ],
+  "history": [
+   [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    2,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    2,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    2,
+    1,
+    1,
+    2,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    2,
+    2,
+    1,
+    2,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    2,
+    2,
+    1,
+    2,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    2,
+    2,
+    1,
+    2,
+    2,
+    0,
+    0,
+    0
+   ],
+   [
+    2,
+    2,
+    2,
+    2,
+    2,
+    0,
+    0,
+    0
+   ],
+   [
+    2,
+    2,
+    2,
+    2,
+    3,
+    0,
+    0,
+    0
+   ],
+   [
+    2,
+    2,
+    2,
+    2,
+    3,
+    1,
+    0,
+    0
+   ],
+   [
+    2,
+    2,
+    2,
+    2,
+    3,
+    2,
+    0,
+    0
+   ],
+   [
+    2,
+    2,
+    2,
+    3,
+    3,
+    2,
+    0,
+    0
+   ],
+   [
+    3,
+    2,
+    2,
+    3,
+    3,
+    2,
+    0,
+    0
+   ],
+   [
+    3,
+    3,
+    2,
+    3,
+    3,
+    2,
+    0,
+    0
+   ],
+   [
+    3,
+    3,
+    2,
+    3,
+    3,
+    2,
+    1,
+    0
+   ],
+   [
+    3,
+    3,
+    2,
+    3,
+    3,
+    2,
+    2,
+    0
+   ],
+   [
+    3,
+    3,
+    2,
+    3,
+    3,
+    2,
+    3,
+    0
+   ],
+   [
+    3,
+    3,
+    2,
+    3,
+    4,
+    2,
+    3,
+    0
+   ],
+   [
+    3,
+    3,
+    3,
+    3,
+    4,
+    2,
+    3,
+    0
+   ],
+   [
+    3,
+    3,
+    3,
+    3,
+    4,
+    2,
+    3,
+    1
+   ],
+   [
+    3,
+    3,
+    3,
+    3,
+    4,
+    2,
+    3,
+    2
+   ],
+   [
+    3,
+    3,
+    3,
+    3,
+    4,
+    2,
+    3,
+    3
+   ],
+   [
+    3,
+    3,
+    3,
+    4,
+    4,
+    2,
+    3,
+    3
+   ],
+   [
+    3,
+    3,
+    3,
+    4,
+    4,
+    3,
+    3,
+    3
+   ],
+   [
+    3,
+    4,
+    3,
+    4,
+    4,
+    3,
+    3,
+    3
+   ],
+   [
+    4,
+    4,
+    3,
+    4,
+    4,
+    3,
+    3,
+    3
+   ],
+   [
+    4,
+    4,
+    3,
+    4,
+    5,
+    3,
+    3,
+    3
+   ],
+   [
+    4,
+    4,
+    3,
+    4,
+    5,
+    3,
+    3,
+    4
+   ],
+   [
+    4,
+    4,
+    4,
+    4,
+    5,
+    3,
+    3,
+    4
+   ],
+   [
+    4,
+    4,
+    4,
+    4,
+    5,
+    3,
+    4,
+    4
+   ],
+   [
+    4,
+    4,
+    4,
+    5,
+    5,
+    3,
+    4,
+    4
+   ],
+   [
+    4,
+    5,
+    4,
+    5,
+    5,
+    3,
+    4,
+    4
+   ],
+   [
+    4,
+    5,
+    4,
+    5,
+    6,
+    3,
+    4,
+    4
+   ],
+   [
+    5,
+    5,
+    4,
+    5,
+    6,
+    3,
+    4,
+    4
+   ],
+   [
+    5,
+    5,
+    4,
+    5,
+    6,
+    4,
+    4,
+    4
+   ],
+   [
+    5,
+    5,
+    4,
+    5,
+    7,
+    4,
+    4,
+    4
+   ],
+   [
+    5,
+    6,
+    4,
+    5,
+    7,
+    4,
+    4,
+    4
+   ],
+   [
+    5,
+    6,
+    4,
+    5,
+    7,
+    4,
+    4,
+    5
+   ],
+   [
+    6,
+    6,
+    4,
+    5,
+    7,
+    4,
+    4,
+    5
+   ],
+   [
+    6,
+    6,
+    4,
+    6,
+    7,
+    4,
+    4,
+    5
+   ],
+   [
+    6,
+    6,
+    5,
+    6,
+    7,
+    4,
+    4,
+    5
+   ],
+   [
+    6,
+    6,
+    5,
+    6,
+    8,
+    4,
+    4,
+    5
+   ],
+   [
+    6,
+    7,
+    5,
+    6,
+    8,
+    4,
+    4,
+    5
+   ],
+   [
+    6,
+    7,
+    5,
+    6,
+    8,
+    4,
+    5,
+    5
+   ],
+   [
+    6,
+    7,
+    5,
+    6,
+    8,
+    4,
+    5,
+    6
+   ],
+   [
+    6,
+    7,
+    5,
+    6,
+    9,
+    4,
+    5,
+    6
+   ],
+   [
+    6,
+    7,
+    5,
+    6,
+    9,
+    5,
+    5,
+    6
+   ],
+   [
+    6,
+    7,
+    5,
+    6,
+    9,
+    5,
+    6,
+    6
+   ],
+   [
+    7,
+    7,
+    5,
+    6,
+    9,
+    5,
+    6,
+    6
+   ],
+   [
+    7,
+    8,
+    5,
+    6,
+    9,
+    5,
+    6,
+    6
+   ],
+   [
+    7,
+    8,
+    5,
+    6,
+    9,
+    5,
+    7,
+    6
+   ],
+   [
+    7,
+    8,
+    6,
+    6,
+    9,
+    5,
+    7,
+    6
+   ],
+   [
+    7,
+    8,
+    6,
+    7,
+    9,
+    5,
+    7,
+    6
+   ],
+   [
+    7,
+    8,
+    6,
+    7,
+    10,
+    5,
+    7,
+    6
+   ],
+   [
+    7,
+    8,
+    6,
+    7,
+    10,
+    5,
+    8,
+    6
+   ],
+   [
+    8,
+    8,
+    6,
+    7,
+    10,
+    5,
+    8,
+    6
+   ],
+   [
+    8,
+    9,
+    6,
+    7,
+    10,
+    5,
+    8,
+    6
+   ],
+   [
+    8,
+    9,
+    7,
+    7,
+    10,
+    5,
+    8,
+    6
+   ],
+   [
+    8,
+    9,
+    7,
+    7,
+    10,
+    6,
+    8,
+    6
+   ],
+   [
+    8,
+    9,
+    7,
+    7,
+    10,
+    6,
+    8,
+    7
+   ],
+   [
+    9,
+    9,
+    7,
+    7,
+    10,
+    6,
+    8,
+    7
+   ],
+   [
+    9,
+    9,
+    7,
+    8,
+    10,
+    6,
+    8,
+    7
+   ],
+   [
+    9,
+    9,
+    8,
+    8,
+    10,
+    6,
+    8,
+    7
+   ],
+   [
+    9,
+    9,
+    8,
+    8,
+    10,
+    6,
+    8,
+    8
+   ],
+   [
+    9,
+    9,
+    8,
+    9,
+    10,
+    6,
+    8,
+    8
+   ],
+   [
+    9,
+    9,
+    8,
+    9,
+    11,
+    6,
+    8,
+    8
+   ],
+   [
+    9,
+    9,
+    9,
+    9,
+    11,
+    6,
+    8,
+    8
+   ],
+   [
+    10,
+    9,
+    9,
+    9,
+    11,
+    6,
+    8,
+    8
+   ],
+   [
+    10,
+    9,
+    9,
+    9,
+    11,
+    7,
+    8,
+    8
+   ],
+   [
+    10,
+    10,
+    9,
+    9,
+    11,
+    7,
+    8,
+    8
+   ],
+   [
+    10,
+    10,
+    10,
+    9,
+    11,
+    7,
+    8,
+    8
+   ],
+   [
+    11,
+    10,
+    10,
+    9,
+    11,
+    7,
+    8,
+    8
+   ],
+   [
+    11,
+    10,
+    10,
+    9,
+    11,
+    7,
+    9,
+    8
+   ],
+   [
+    11,
+    10,
+    10,
+    9,
+    11,
+    7,
+    9,
+    9
+   ],
+   [
+    11,
+    10,
+    10,
+    9,
+    12,
+    7,
+    9,
+    9
+   ],
+   [
+    11,
+    10,
+    10,
+    9,
+    12,
+    8,
+    9,
+    9
+   ],
+   [
+    11,
+    10,
+    10,
+    10,
+    12,
+    8,
+    9,
+    9
+   ],
+   [
+    11,
+    10,
+    10,
+    10,
+    13,
+    8,
+    9,
+    9
+   ],
+   [
+    11,
+    10,
+    11,
+    10,
+    13,
+    8,
+    9,
+    9
+   ],
+   [
+    12,
+    10,
+    11,
+    10,
+    13,
+    8,
+    9,
+    9
+   ],
+   [
+    12,
+    11,
+    11,
+    10,
+    13,
+    8,
+    9,
+    9
+   ],
+   [
+    12,
+    11,
+    11,
+    11,
+    13,
+    8,
+    9,
+    9
+   ],
+   [
+    12,
+    11,
+    11,
+    11,
+    13,
+    9,
+    9,
+    9
+   ],
+   [
+    13,
+    11,
+    11,
+    11,
+    13,
+    9,
+    9,
+    9
+   ],
+   [
+    13,
+    11,
+    11,
+    11,
+    14,
+    9,
+    9,
+    9
+   ],
+   [
+    13,
+    12,
+    11,
+    11,
+    14,
+    9,
+    9,
+    9
+   ],
+   [
+    13,
+    12,
+    11,
+    11,
+    14,
+    9,
+    9,
+    10
+   ],
+   [
+    13,
+    12,
+    11,
+    11,
+    15,
+    9,
+    9,
+    10
+   ],
+   [
+    13,
+    12,
+    11,
+    11,
+    15,
+    9,
+    10,
+    10
+   ],
+   [
+    13,
+    13,
+    11,
+    11,
+    15,
+    9,
+    10,
+    10
+   ],
+   [
+    13,
+    13,
+    12,
+    11,
+    15,
+    9,
+    10,
+    10
+   ],
+   [
+    13,
+    13,
+    12,
+    11,
+    15,
+    9,
+    10,
+    11
+   ],
+   [
+    13,
+    13,
+    12,
+    11,
+    15,
+    9,
+    11,
+    11
+   ],
+   [
+    13,
+    13,
+    12,
+    11,
+    15,
+    9,
+    12,
+    11
+   ],
+   [
+    13,
+    13,
+    12,
+    11,
+    16,
+    9,
+    12,
+    11
+   ],
+   [
+    14,
+    13,
+    12,
+    11,
+    16,
+    9,
+    12,
+    11
+   ],
+   [
+    14,
+    13,
+    12,
+    11,
+    16,
+    10,
+    12,
+    11
+   ],
+   [
+    14,
+    13,
+    12,
+    12,
+    16,
+    10,
+    12,
+    11
+   ],
+   [
+    14,
+    14,
+    12,
+    12,
+    16,
+    10,
+    12,
+    11
+   ],
+   [
+    14,
+    14,
+    12,
+    12,
+    16,
+    11,
+    12,
+    11
+   ],
+   [
+    14,
+    14,
+    12,
+    13,
+    16,
+    11,
+    12,
+    11
+   ],
+   [
+    14,
+    15,
+    12,
+    13,
+    16,
+    11,
+    12,
+    11
+   ],
+   [
+    14,
+    15,
+    12,
+    13,
+    16,
+    11,
+    12,
+    12
+   ],
+   [
+    14,
+    15,
+    13,
+    13,
+    16,
+    11,
+    12,
+    12
+   ],
+   [
+    15,
+    15,
+    13,
+    13,
+    16,
+    11,
+    12,
+    12
+   ],
+   [
+    15,
+    16,
+    13,
+    13,
+    16,
+    11,
+    12,
+    12
+   ],
+   [
+    15,
+    16,
+    13,
+    13,
+    16,
+    12,
+    12,
+    12
+   ],
+   [
+    15,
+    16,
+    13,
+    13,
+    16,
+    12,
+    13,
+    12
+   ],
+   [
+    15,
+    16,
+    13,
+    13,
+    17,
+    12,
+    13,
+    12
+   ],
+   [
+    15,
+    17,
+    13,
+    13,
+    17,
+    12,
+    13,
+    12
+   ],
+   [
+    16,
+    17,
+    13,
+    13,
+    17,
+    12,
+    13,
+    12
+   ],
+   [
+    16,
+    17,
+    13,
+    13,
+    18,
+    12,
+    13,
+    12
+   ],
+   [
+    16,
+    17,
+    14,
+    13,
+    18,
+    12,
+    13,
+    12
+   ],
+   [
+    16,
+    18,
+    14,
+    13,
+    18,
+    12,
+    13,
+    12
+   ],
+   [
+    17,
+    18,
+    14,
+    13,
+    18,
+    12,
+    13,
+    12
+   ],
+   [
+    17,
+    18,
+    15,
+    13,
+    18,
+    12,
+    13,
+    12
+   ],
+   [
+    17,
+    18,
+    15,
+    13,
+    18,
+    12,
+    13,
+    13
+   ],
+   [
+    18,
+    18,
+    15,
+    13,
+    18,
+    12,
+    13,
+    13
+   ],
+   [
+    18,
+    18,
+    15,
+    14,
+    18,
+    12,
+    13,
+    13
+   ],
+   [
+    18,
+    18,
+    15,
+    15,
+    18,
+    12,
+    13,
+    13
+   ],
+   [
+    18,
+    18,
+    15,
+    15,
+    18,
+    13,
+    13,
+    13
+   ],
+   [
+    18,
+    18,
+    16,
+    15,
+    18,
+    13,
+    13,
+    13
+   ],
+   [
+    18,
+    18,
+    16,
+    15,
+    18,
+    13,
+    13,
+    14
+   ],
+   [
+    18,
+    18,
+    16,
+    15,
+    19,
+    13,
+    13,
+    14
+   ],
+   [
+    18,
+    18,
+    16,
+    15,
+    19,
+    13,
+    14,
+    14
+   ],
+   [
+    18,
+    18,
+    16,
+    15,
+    19,
+    13,
+    15,
+    14
+   ],
+   [
+    18,
+    18,
+    16,
+    16,
+    19,
+    13,
+    15,
+    14
+   ],
+   [
+    18,
+    18,
+    16,
+    16,
+    20,
+    13,
+    15,
+    14
+   ],
+   [
+    18,
+    19,
+    16,
+    16,
+    20,
+    13,
+    15,
+    14
+   ],
+   [
+    18,
+    19,
+    16,
+    17,
+    20,
+    13,
+    15,
+    14
+   ],
+   [
+    18,
+    19,
+    16,
+    17,
+    20,
+    14,
+    15,
+    14
+   ],
+   [
+    18,
+    19,
+    16,
+    17,
+    20,
+    14,
+    15,
+    15
+   ],
+   [
+    19,
+    19,
+    16,
+    17,
+    20,
+    14,
+    15,
+    15
+   ],
+   [
+    19,
+    19,
+    16,
+    17,
+    20,
+    15,
+    15,
+    15
+   ],
+   [
+    19,
+    19,
+    16,
+    17,
+    20,
+    16,
+    15,
+    15
+   ],
+   [
+    19,
+    19,
+    16,
+    17,
+    20,
+    16,
+    15,
+    16
+   ],
+   [
+    20,
+    19,
+    16,
+    17,
+    20,
+    16,
+    15,
+    16
+   ],
+   [
+    20,
+    19,
+    16,
+    17,
+    20,
+    17,
+    15,
+    16
+   ],
+   [
+    20,
+    19,
+    16,
+    18,
+    20,
+    17,
+    15,
+    16
+   ],
+   [
+    20,
+    19,
+    16,
+    18,
+    20,
+    18,
+    15,
+    16
+   ],
+   [
+    20,
+    19,
+    16,
+    18,
+    20,
+    18,
+    16,
+    16
+   ],
+   [
+    20,
+    20,
+    16,
+    18,
+    20,
+    18,
+    16,
+    16
+   ],
+   [
+    20,
+    20,
+    16,
+    18,
+    21,
+    18,
+    16,
+    16
+   ],
+   [
+    20,
+    20,
+    16,
+    18,
+    21,
+    19,
+    16,
+    16
+   ],
+   [
+    20,
+    20,
+    17,
+    18,
+    21,
+    19,
+    16,
+    16
+   ],
+   [
+    20,
+    20,
+    17,
+    18,
+    21,
+    19,
+    16,
+    17
+   ],
+   [
+    21,
+    20,
+    17,
+    18,
+    21,
+    19,
+    16,
+    17
+   ],
+   [
+    21,
+    20,
+    17,
+    18,
+    21,
+    20,
+    16,
+    17
+   ],
+   [
+    21,
+    20,
+    17,
+    18,
+    21,
+    20,
+    16,
+    18
+   ],
+   [
+    21,
+    20,
+    17,
+    19,
+    21,
+    20,
+    16,
+    18
+   ],
+   [
+    21,
+    20,
+    17,
+    19,
+    21,
+    21,
+    16,
+    18
+   ],
+   [
+    22,
+    20,
+    17,
+    19,
+    21,
+    21,
+    16,
+    18
+   ],
+   [
+    22,
+    20,
+    17,
+    20,
+    21,
+    21,
+    16,
+    18
+   ],
+   [
+    22,
+    20,
+    17,
+    20,
+    21,
+    22,
+    16,
+    18
+   ],
+   [
+    22,
+    20,
+    17,
+    20,
+    21,
+    22,
+    16,
+    19
+   ],
+   [
+    22,
+    20,
+    17,
+    21,
+    21,
+    22,
+    16,
+    19
+   ],
+   [
+    23,
+    20,
+    17,
+    21,
+    21,
+    22,
+    16,
+    19
+   ],
+   [
+    23,
+    21,
+    17,
+    21,
+    21,
+    22,
+    16,
+    19
+   ]
+  ],
+  "labels": [
+   "2 into bottom side, soft",
+   "2 into bottom side, medium",
+   "2 into bottom side, firm",
+   "9 into bottom-right, soft",
+   "9 into bottom-right, medium",
+   "9 into bottom-right, firm",
+   "2 into bottom-left, soft",
+   "2 into bottom-left, medium"
+  ],
+  "sims": 592,
+  "depth": 3
+ }
+}
